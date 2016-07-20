@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript">
+	var data = [38,69,42,58,87];
+	d3.select('body').selectAll('div')
+	.data(data)
+	.enter()
+	.append('div')
+	.text(function(d){
+		return d;
+	}).style({
+		'color': function(d){
+			if(d < 60){
+				return 'red'
+			}
+		},
+		'width': function(d){
+			return d + 'px'
+		},
+		'margin':'2px 0',
+		'background':'#aaa',
+	});
+</script>
+</body>
+</html>

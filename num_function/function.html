@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript">
+	var data = [38,69,72,42,58,87];
+	d3.select('body').selectAll('div').data(data).enter().append('div').text(function(d){
+		return d;
+	});
+	d3.select('body').append('div').html('min:' + d3.min(data)); //min
+	d3.select('body').append('div').html('max:' + d3.max(data)); //max
+  d3.select('body').append('div').html('sum:'+ d3.sum(data)); //sum
+  d3.select('body').append('div').html('extent:' + d3.extent(data)) //最小值與最大值
+  d3.select('body').append('div').html('mean:' + d3.mean(data));  //平均數
+  d3.select('body').append('div').html( 'shuffle:'+d3.shuffle(data));//亂數排列
+</script>
+</body>
+</html>

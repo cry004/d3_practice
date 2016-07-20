@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript">
+	var data = [1,2,3,4,5];
+	d3.select('body').selectAll('div')
+	.data(data)
+	.enter()
+	.append('div')
+	.text(function(d){
+		return d;
+	});
+
+</script>
+</body>
+</html>
